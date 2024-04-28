@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jh</title>
+    <script>
+        window.onload=()=>{
+            var ta = document.getElementById("ta");
+            var btn1=document.getElementById("btn1");
+            btn1.addEventListener("click",()=>{
+                console.log("hello world!");
+            })
+            fetch("/page/jsontest")
+                .then(response => data=response.json())
+                .then(data => {
+                    ta.value=JSON.stringify(data);
+                    console.log(data)
+                })
+        }
+    </script>
+</head>
+<body>
+<div>
+    <label for="ta">ta</label>
+    <textarea id="ta" rows="10" cols="30"></textarea>
+</div>
+<div>
+    <button id="btn1">hello world!</button>
+</div>
+</body>
+</html>
